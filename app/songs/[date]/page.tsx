@@ -41,7 +41,7 @@ export default async function SongPage({ params }: SongPageProps) {
     .order('created_at', { ascending: false })
 
   // 获取评分用户信息
-  const userIds = [...new Set((ratings || []).map(r => r.user_id))]
+  const userIds = Array.from(new Set((ratings || []).map(r => r.user_id)))
   const { data: ratingProfiles } = userIds.length > 0 ? await supabase
     .from('profiles')
     .select('id, display_name')
@@ -73,7 +73,7 @@ export default async function SongPage({ params }: SongPageProps) {
     .order('created_at', { ascending: false })
 
   // 获取评论用户信息
-  const commentUserIds = [...new Set((commentsData || []).map(c => c.user_id))]
+  const commentUserIds = Array.from(new Set((commentsData || []).map(c => c.user_id)))
   const { data: commentProfiles } = commentUserIds.length > 0 ? await supabase
     .from('profiles')
     .select('id, display_name')

@@ -81,7 +81,7 @@ export default async function HomePage() {
             🎵
           </div>
           <span style={{ background: 'var(--gradient-primary)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            每日音乐
+            每日好歌
           </span>
         </Link>
         <UserMenu initialUser={user as any} />
